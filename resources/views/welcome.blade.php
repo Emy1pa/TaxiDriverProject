@@ -46,13 +46,13 @@
             </div>
             <p class="text-lg mb-6">Are you a passenger or a driver?</p>
             <div class="flex justify-center space-x-4">
-                <button onclick="redirectToRegister('passenger')"
+                <button onclick="redirectToRegister('passager')"
                     class="bg-[#ffb703] text-white px-6 py-3 rounded-full hover:bg-yellow-600 focus:outline-none focus:ring focus:border-yellow-300">
-                    Passenger
+                    Passager
                 </button>
-                <button onclick="redirectToRegister('driver')"
+                <button onclick="redirectToRegister('chauffeur')"
                     class="bg-[#ffb703] text-white px-6 py-3 rounded-full hover:bg-yellow-600 focus:outline-none focus:ring focus:border-yellow-300">
-                    Driver
+                    Chauffeur
                 </button>
             </div>
         </div>
@@ -95,9 +95,9 @@
         // Function to redirect to the appropriate registration page
         function redirectToRegister(userType) {
             hideRegisterModal();
-            if (userType === 'passenger') {
+            if (userType === 'passager') {
                 window.location.href = '{{ route('register') }}'; // Update with your passenger registration route
-            } else if (userType === 'driver') {
+            } else if (userType === 'chauffeur') {
                 window.location.href = '{{ route('registerChauffeur') }}'; // Update with your driver registration route
             }
         }

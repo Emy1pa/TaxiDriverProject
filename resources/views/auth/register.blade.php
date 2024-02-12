@@ -82,6 +82,15 @@
                             <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
+                    <!-- Image Upload -->
+                    <div class="flex flex-col mb-3">
+                        <label for="image">Profile Image</label>
+                        <input id="image" type="file" name="picture" accept="image/*"
+                            class="px-3 py-2 bg-gray-800 border border-gray-900 focus:border-[#ffb703] focus:outline-none focus:bg-gray-800 focus:text-[#ffb703]">
+                        @error('image')
+                            <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
                     <div class="flex flex-col mb-3">
                         <label for="email">Email</label>
                         <input type="text" id="email" name="email" value="{{ old('email') }}""
@@ -93,7 +102,7 @@
                     </div>
                     <div class="flex flex-col mb-3">
                         <label for="password">Password</label>
-                        <input type="password" id="password"
+                        <input type="password" id="password" name="password"
                             class="px-3 py-2 bg-gray-800 border border-gray-900 focus:border-[#ffb703] focus:outline-none focus:bg-gray-800 focus:text-[#ffb703]">
                         @error('password')
                             <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
@@ -117,16 +126,9 @@
                             <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
+                    <input type="text" value="{{$role}}" class="hidden" name="role">
 
-                    <!-- Image Upload -->
-                    <div class="flex flex-col mb-3">
-                        <label for="image">Profile Image</label>
-                        <input id="image" type="file" name="image" accept="image/*"
-                            class="px-3 py-2 bg-gray-800 border border-gray-900 focus:border-[#ffb703] focus:outline-none focus:bg-gray-800 focus:text-[#ffb703]">
-                        @error('image')
-                            <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
-                        @enderror
-                    </div>
+                    
                 </div>
                 <div class="flex items-center justify-end mt-6">
                     <a class="text-sm text-gray-600 hover:text-[#ffb703] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ffb703]"
