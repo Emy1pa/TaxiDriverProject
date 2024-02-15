@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +35,11 @@ Route::middleware('auth')->group(function () {
 Route::get('/home', [HomeController::class,'index']);
 
 Route::post('/login', [SessionController::class, 'store']);
+
+// Reservations
+Route::resource('reservations',ReservationController::class);
+Route::post('/reservations/{reservation}/rating', [ReservationController::class, 'ratingRoute'])->name('reservations.rating');
+//Routes
+Route::resource('routes',RouteController::class);
 
 require __DIR__.'/auth.php';
